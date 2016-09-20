@@ -50,3 +50,4 @@ print('\n')
 multi= lambda x: x+1 #def 함수 만들 필요없이 = lambda 변수: 식 형태임
 print(multi(2))
 
+# GitHub 레퍼지토리 쪽으로 이동시킴
