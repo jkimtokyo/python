@@ -1,4 +1,5 @@
 #config=utf-8
+
 print('')
 scores = []
 names = []
