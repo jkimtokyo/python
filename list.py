@@ -42,3 +42,22 @@ b[2:] = [0,0,0,0]
 print(b)
 
 # append
+a = [1,2,3]
+a.append(4)
+print(a)
+print('-----------')
+a.append([9,7,6])
+# a.sort() # 리스트 안의 리스트는 소트 안된다.......
+print(a)
+
+print('')
+v = [2,3,1,0]
+v.sort()
+print(v)
+x = ['g','h','z','u','d','k','f','n','a','z']
+x.sort()
+print(x) # 그런데 문자와 실수가 리스트에 같이 들어 있으면 소트 출력 결과 아무것도 내지 못한다....['a','b',1,2]
+
+del(x[2:5])
+print(x)
+
