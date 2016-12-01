@@ -69,7 +69,7 @@ for x in range(2, 10):
 a = [1,2]
 b = [i for i in a] # 출력값은 [1,2] 이건 식이 없는...
 a = [1, 2, 3]
-b = [i+1 for i in a] # [2, 3, 4] 식이 i+1
+b = [i+1 for i in a] # [2, 3, 4] 식이 i+1 1)for i in a 하나씩 가져와서 2)i+1 대입
 print(b)
 print('------------')
 
@@ -78,10 +78,24 @@ a = [3,4,5,6,7]
 b = [i for i in a if i%2 == 0] # list 하나씩 들고 와서 그것이 만약 짝수(2로 나눠 나머지가 0이라면(i%2==0)) b 변수에 할당, 홀수는 i%2 == 1
 print(b) # [4, 6]
 c = [i*3 for i in a if i%2 == 1] # list 하나씩 들고 와서 3을 곱하고 그것이 홀수면 C 변수에 할당
-print(c)
-f = [i+1 for i in a if i==7]
-print(f) # 왜 7이 아닌 8이 출력되는가?? if 판별이 우선한다 3-7까지 중 7, 7+1 = 8
-g = [i-1 for i in a if i>5]
-print(g) # if 먼저 판별하니까 6,7을 뽑아낸 후 -1을 하니까 [5, 6]
+print(c) # [9, 15, 21]
+f = [i+1 for i in a if i==7] # 8, 왜 7이 아닌 8이 출력되는가??
+# 구문해석의 순서: 1)for i in a : 리스트에 있는 i 들을 순서대로 가져온다. 2)if i==7 그 중 7과 같은... 3)i+1 계산.
 
-# 리스트 내포(LIST Comprehension) 문장에 for 문을 2개 이상 쓸 수 있다
+# 리스트 내포 문장에서 복수의 FOR IF 사용할 수 있다
+a = [1,2,3,4,5]
+b = [4,5,6,7,8]
+c = [i+j for i in a if i>1
+         for j in b if i==j] # 들여쓰기 해야 함
+# 1)for i in a a의 리스트들 > 2)1보다 큰 a 2,3,4
+# 3)for j in b : 1보다 큰 a의 2,3,4를 아랫 줄 b의 4,5,6,7과 참조하여 -
+# 4)i == j 조건은 4와 5가 해당
+# 5)4+4, 5+5 출력값은 [8, 10]
+print(c) # 8
+
+a = [1,2,3,4,5]
+b = [1,2,3,4,5]
+c = [j+1 for i in a if i == 2
+        for j in b if i == j]
+# for i in a > if i == 2 > for j in b > i == j > j+1
+print(c) # 3
