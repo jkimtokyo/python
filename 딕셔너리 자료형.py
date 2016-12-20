@@ -35,7 +35,7 @@ for i in jk.values():
 # 이번에는 키밸류를 쌍으로 묶어서 튜플로 만들어 주는 .items()
 print(jk.items()) # ([('year', '1970'), ('day', '18')])
 
-# 키 밸류 쌍으로 삭제하기 .clear()
+# 키 밸류 전부 삭제하기 .clear()
 jk.clear()
 print(jk) # {} 지워졌음
 

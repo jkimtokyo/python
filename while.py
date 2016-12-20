@@ -6,8 +6,9 @@ while num < 3: # 조건문 0부터 1,2까지
     print('%d번 돌았습니다.' %num, end='') # 1번 돌았습니다.2번 돌았습니다.3번 돌았습니다.
 print('')
 print('-------------')
+
 coffee = 1
-while True:
+while True: # WHILE 문의 조건문이 True 이므로 항상 참인 상태
     money = int(input('커피값은 100원입니다 : '))
     if money == 100:
         print('커피 나오셨습니다.')
@@ -20,7 +21,7 @@ while True:
         break
 
 # WHILE 문을 강제로 종료 (빠져나가는) break
-tea = 2
+tea = 1
 while True:
     money = int(input('아이스티는 120원입니다 : '))
     if money == 120:
@@ -33,3 +34,13 @@ while True:
         print('모든 음료수가 판매 종료되었습니다.')
         break # break 로 끊어야 비로서 더이상 반복되지 않고 종료된다.
 
+# WHILE 구문에서도 CONTINUE 사용할 수 있다. 컨티뉴는 조건이 맞지 않으면 (무시하고) WHILE 구문 처음으로 돌아가는...
+a = 0
+while a < 10:
+    a = a+1
+    if a%2 ==1: continue # 2로 나눠 나머지가 1이니까 홀수고 홀수일 경우 무시하고 반복문을 a < 10:로 돌아가라.
+    print(a) # 짝수들만 출력된다 2 4 6 8 10
+
+# 무한루프
+while True:
+    print('무한루프') # 이건 계속 무한루프...
